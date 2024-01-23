@@ -11,7 +11,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Descrizione</th>
-                    <th scope="col">Azioni</th>
+                    <th class="text-center" scope="col">Azioni</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,8 +20,16 @@
                         <td>{{ $project->id }}</td>
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->description }}</td>
-                        <td><a class="btn btn-success"
-                                href="{{ route('admin.projects.show', ['project' => $project->slug]) }}">Dettagli</a></td>
+                        <td class="w-25 text-center">
+                            <a class="btn btn-success" href="{{ route('admin.projects.show', ['project' => $project->slug]) }}">Dettagli</a>
+                            <a class="btn btn-warning" href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}">Modifica</a>
+                            <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}" class="d-inline-block"
+                                method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"">Elimina</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

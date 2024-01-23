@@ -5,6 +5,14 @@
         <div class="text-end">
             <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Aggiungi un progetto</a>
         </div>
+        {{-- Messaggio di avvenuta eliminazione di un elemento --}}
+        @if (session('delete_message'))
+            <div class="container my-3 w-50 text-center alert alert-success">
+                <span class="text-danger">{{ session('delete_message') }}</span>
+            </div>
+        @endif
+        {{-- /Messaggio di avvenuta eliminazione di un elemento --}}
+
         <table class="table">
             <thead>
                 <tr>

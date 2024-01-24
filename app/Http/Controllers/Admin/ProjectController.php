@@ -44,7 +44,6 @@ class ProjectController extends Controller
 
         $project = new Project();
         $project->fill($form_data);
-        $project->slug = Str::slug($project->title);
 
         $project->save();
 
@@ -80,11 +79,11 @@ class ProjectController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProjectRequest $request, $slug)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data = $request->validated();
 
-        $project_to_update = Project::where('slug', $slug)->first();
+        $project_to_update = $project;
         $project_to_update->update($form_data);
 
         return redirect()->route('admin.projects.show', ["project" => $project_to_update->slug])->with('edit_message', 'Le modifiche sono state apportate con successo');

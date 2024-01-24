@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5|max:100',
+            'title' => 'required|unique:projects|min:5|max:100',
             'description' => 'nullable|max:300',
         ];
     }
@@ -32,6 +32,7 @@ class StoreProjectRequest extends FormRequest
     public function messages() {
         return [
         'title.required' => 'Il titolo non può essere vuoto',
+        'title.unique' => 'Questo titolo è già in uso',
         'title.min' => 'Il titolo deve essere di almeno 5 caratteri',
         'title.max' => 'Il titolo non può superare i 100 caratteri',
 

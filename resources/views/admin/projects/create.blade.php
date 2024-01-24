@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    @include('partials.back')
+    
     <h2 class="text-center">Aggiungi un nuovo progetto</h2>
 
     @if ($errors->any())

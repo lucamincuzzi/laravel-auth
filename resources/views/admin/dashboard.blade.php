@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container">
+        @include('partials.back')
+        
         <div class="row justify-content-center">
             <div class="col-md-8 mt-4">
                 <div class="card">
@@ -14,7 +16,7 @@
                             </div>
                         @endif
 
-                        {{ __('Sei loggato!') }}
+                        <p>Ciao {{ Auth::user()->name }}!</p>
                     </div>
                 </div>
             </div>

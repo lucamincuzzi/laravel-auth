@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container mt-5">
+        @include('partials.back')
+        
         {{-- Messaggio di avvenuta aggiunta o modifica dell'elemento --}}
         @if (session('add_message'))
             <div class="container my-3 w-50 text-center alert alert-success">

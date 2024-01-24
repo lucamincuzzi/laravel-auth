@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+
+<div class="container mt-5">
+        @include('partials.back')
+        
         <h2 class="text-center">Aggiungi un nuovo progetto</h2>
 
         @if ($errors->any())
@@ -14,7 +17,7 @@
             </div>
         @endif
     
-        <form class="mt-5" action="{{ route('admin.projects.update', ["project" => $project->slug]) }}" method="POST">
+        <form action="{{ route('admin.projects.update', ["project" => $project->slug]) }}" method="POST">
             @csrf
             @method("PUT")
     

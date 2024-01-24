@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container my-4">
+        @include('partials.back')
+        
         <div class="text-end">
             <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Aggiungi un progetto</a>
         </div>

@@ -64,7 +64,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-folder-tree fa-lg fa-fw"></i> Progetti</a>
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.projects.index') }}">
+                                    <i class="fa-solid fa-folder-tree fa-lg fa-fw"></i> Progetti</a>
                             </li>
                         </ul>
 
